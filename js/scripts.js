@@ -87,7 +87,7 @@ function cambiarPosicion(elemento) {
 
     elemento.style = "top: " + y + 'vh; left: ' + x + '%';
 
-    cambiarSentidoYVelocidad();
+    cambiarSentidoYVelocidad(elemento);
 
     temporizador = new Date();
 }
@@ -95,7 +95,7 @@ function cambiarPosicion(elemento) {
 function cambiarSentidoYVelocidad(elemento){
     const rotacionAleatoriaInicial = Math.floor(Math.random() * 360);
     let aleatorio = Math.floor(Math.random() * 2);
-    
+
     let rotacionAleatoriaMedia, rotacionAleatoriaFinal;
     if (aleatorio) {
         rotacionAleatoriaMedia = rotacionAleatoriaInicial + 180;
