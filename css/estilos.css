@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body{
+    background-color: bisque;
+    width: 100%; 
+    height: 100vh; 
+    background-image: url('../imagenes/fondo.jpeg');
+    background-size: cover;
+    position: relative;
+    margin: 0;
+    cursor: crosshair;
+    font-family: "Space Mono", monospace;
+}
+
+#cabecera{
+    background-color: rgb(43, 43, 43);
+    border: 1px solid rgb(0, 0, 0);
+    color: rgb(255, 220, 179);
+    text-shadow: 0px 0px 3px rgb(255, 0, 0);
+}
+
+h1{
+    margin: 0;    
+    color: rgb(218, 240, 255);
+    text-shadow: 0px 0px 3px rgb(24, 190, 255);
+}
+
+#interfaz{
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    text-align: end;
+    text-shadow: 0px 0px 3px rgb(255, 0, 0);
+    color: rgb(255, 220, 179);
+    background-color: rgb(43, 43, 43);
+    border: 1px solid rgb(0, 0, 0);
+    padding: 0.5em;
+    border-radius: 1em;
+}
+#contador_basuras,
+#contador_satelites,
+#contador_puntos{
+    border: none;
+    width: 70px;
+    text-align: center;
+    background-color: rgb(255, 234, 218);
+    border-radius: 5px;
+    color: black;
+    font-family: "Space Mono", monospace;
+}
+
+#basura{
+    /* background-color: blue; */
+    background-image: url('../imagenes/basura.png');
+    /* width: 100px; */
+    /* height: 100px; */
+    /* background-size: contain; */
+    /* position: absolute; */
+}
+#basura.disparado{
+    background-image: url('../imagenes/explosion.gif');
+}
+
+#satelite{
+    /* background-color: green; */
+    background-image: url('../imagenes/satelite.png');
+}
+#satelite.disparado{
+    background-image: url('../imagenes/explosion.gif');
+}
+
+.elemento{
+    width: 100px; 
+    height: 100px; 
+    background-size: contain;
+    position: absolute;
+    display: inline-block;
+    animation: rotacionEscala 100s infinite;
+}
+
+.no-visible{
+    display: none;
+}
+
+
+#punto_fijo {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    /* width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    transform: translateX(-50%); */
+}
+
+/* El SVG ocupará toda la ventana */
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Esto permite interactuar con el contenido sin bloquear el mouse */
+}
+
+@keyframes rotacionEscala {
+    0% {
+        transform: scale(1) rotate(0deg); /* Estado inicial */
+    }
+    50% {
+        transform: scale(1.1) rotate(180deg); /* Aumenta el tamaño y rota */
+    }
+    100% {
+        transform: scale(1) rotate(0deg); /* Vuelve al estado inicial */
+    }
+}

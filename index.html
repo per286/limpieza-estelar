@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>LIMPIEZA ESPACIAL</title>
+
+        <!-- Icono -->
+        <link rel="icon" href="imagenes/satelite.png" type="image/png">
+    
+        <!-- Enlace a la hoja de estilos -->
+        <link rel="stylesheet" href="css/estilos.css">
+    
+        <!-- Enlace al script de JavaScript -->
+        <script src="js/scripts.js" defer></script>
+    </head>
+    <body>
+        <div id="cabecera">
+            <h1>LIMPIEZA ESPACIAL</h1>
+            Destruye la basura espacial, pero ten cuidado de no destruir ningún satélite.
+        </div>
+
+        <div id="interfaz">
+            Basura eliminada: <input id="contador_basuras" value="0"><br>
+            Satelites destruidos: <input id="contador_satelites" value="0"><br>
+            PUNTOS: <input id="contador_puntos" value="0">
+        </div>
+
+        <div id="basura" class="elemento"></div>
+        <div id="satelite" class="elemento no-visible"></div>
+
+        <div id="punto_fijo"></div>
+
+        <svg id="linea-svg">
+            <line id="linea_disparo" x1="0" y1="0" x2="0" y2="0" stroke="red" stroke-width="2"/>
+        </svg>
+
+    </body>
+</html>
