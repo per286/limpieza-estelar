@@ -76,6 +76,9 @@ h1{
     position: absolute;
     display: inline-block;
     animation: rotacionEscala 100s infinite;
+    --rotacion-inicial: 0deg;
+    --rotacion-media: 180deg;
+    --rotacion-final: 360deg;
 }
 
 .no-visible{
@@ -106,12 +109,12 @@ svg {
 
 @keyframes rotacionEscala {
     0% {
-        transform: scale(1) rotate(0deg); /* Estado inicial */
+        transform: scale(1) rotate(var(--rotacion-inicial)); /* Estado inicial */
     }
     50% {
-        transform: scale(1.1) rotate(180deg); /* Aumenta el tamaño y rota */
+        transform: scale(1.1) rotate(var(--rotacion-media)); /* Aumenta el tamaño y rota */
     }
     100% {
-        transform: scale(1) rotate(0deg); /* Vuelve al estado inicial */
+        transform: scale(1) rotate(var(--rotacion-final)); /* Vuelve al estado inicial */
     }
 }

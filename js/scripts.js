@@ -86,7 +86,31 @@ function cambiarPosicion(elemento) {
     // console.log('y: ' + y);
 
     elemento.style = "top: " + y + 'vh; left: ' + x + '%';
+
+    cambiarSentidoYVelocidad();
+
     temporizador = new Date();
+}
+
+function cambiarSentidoYVelocidad(elemento){
+    const rotacionAleatoriaInicial = Math.floor(Math.random() * 360);
+    let aleatorio = Math.floor(Math.random() * 2);
+    
+    let rotacionAleatoriaMedia, rotacionAleatoriaFinal;
+    if (aleatorio) {
+        rotacionAleatoriaMedia = rotacionAleatoriaInicial + 180;
+        rotacionAleatoriaFinal = rotacionAleatoriaInicial + 360;
+    } else {
+        rotacionAleatoriaMedia = rotacionAleatoriaInicial - 180;
+        rotacionAleatoriaFinal = rotacionAleatoriaInicial - 360;
+    }
+    
+    elemento.style.setProperty('--rotacion-inicial', rotacionAleatoriaInicial + 'deg');
+    elemento.style.setProperty('--rotacion-media', rotacionAleatoriaMedia + 'deg');
+    elemento.style.setProperty('--rotacion-final', rotacionAleatoriaFinal + 'deg');
+
+    const velocidadRotacion = Math.floor(Math.random() * 200) + 10;
+    elemento.style.setProperty('animation', 'rotacionEscala ' + velocidadRotacion + 's infinite');
 }
 
 function evaluarPuntos(evento = null) {
